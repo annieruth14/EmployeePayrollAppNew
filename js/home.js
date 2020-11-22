@@ -25,7 +25,7 @@ const createInnerHtml = () => {
             <td>${empPayrollData._gender}</td>
             <td>${getDeptHtml(empPayrollData._department)}</td>
             <td>${empPayrollData._salary}</td>
-            <td>${empPayrollData._startDate}</td>
+            <td>${stringifyDate(empPayrollData._startDate)}</td>
             <td>
                 <img name="${empPayrollData._id}" onclick="remove(this)" alt="delete"
                         src="../assets/icons/delete-black-18dp.svg">
@@ -36,50 +36,6 @@ const createInnerHtml = () => {
       ` ;
     }
     document.querySelector('#table-display').innerHTML = innerHtml;
-}
-
-const createEmployeePayrollJSON = () => {
-    let empPayrollListLocal = [
-        {
-            _name:'Neha Clare',
-            _gender:'female',
-            _department:[
-                'Engineering',
-                'Sales'
-            ],
-            _salary:'500000',
-            _startDate: '29 Oct 2019',
-            _note: '',
-            _id: new Date().getTime(),
-            _profilePic: '../assets/profile-images/Ellipse -4.png'
-        },
-        {
-            _name:'Annie',
-            _gender:'female',
-            _department:[
-                'Finance'
-            ],
-            _salary:'400000',
-            _startDate: '29 Aug 2017',
-            _note: '',
-            _id: new Date().getTime() + 1,
-            _profilePic: '../assets/profile-images/Ellipse -4.png'
-        },
-        {
-            _name:'Avi',
-            _gender:'male',
-            _department:[
-                'Marketing',
-                'Finance'
-            ],
-            _salary:'450000',
-            _startDate: '1 July 2017',
-            _note: '',
-            _id: new Date().getTime() + 2,
-            _profilePic: '../assets/profile-images/Ellipse -3.png'
-        }
-    ];
-    return empPayrollListLocal;
 }
 
 const getDeptHtml = (deptList) => {
