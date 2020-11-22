@@ -10,13 +10,13 @@ const getEmployeeDataFromStorage = () => {
 }
 
 const createInnerHtml = () => {
-    // if(empPayrollList.length == 0) return;
+    if(empPayrollList.length == 0) return;
     const headerHtml = "<th></th><th>Name</th><th>Gender</th><th>Department</th>" +
                         "<th>Salary</th><th>Start Date</th><th>Actions</th>";
     let innerHtml = `${headerHtml}`;
-    empPayrollList = createEmployeePayrollJSON();
+    //empPayrollList = createEmployeePayrollJSON();
     for(const empPayrollData of empPayrollList) {
-        innerHtml = `${innerHtml}
+        innerHtml = `${innerHtml}    
         <tr>
             <td>
                 <img class="profile" alt="" src="${empPayrollData._profilePic}">
@@ -64,6 +64,19 @@ const createEmployeePayrollJSON = () => {
             _note: '',
             _id: new Date().getTime() + 1,
             _profilePic: '../assets/profile-images/Ellipse -4.png'
+        },
+        {
+            _name:'Avi',
+            _gender:'male',
+            _department:[
+                'Marketing',
+                'Finance'
+            ],
+            _salary:'450000',
+            _startDate: '1 July 2017',
+            _note: '',
+            _id: new Date().getTime() + 2,
+            _profilePic: '../assets/profile-images/Ellipse -3.png'
         }
     ];
     return empPayrollListLocal;
